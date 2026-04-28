@@ -218,11 +218,7 @@ This repo is prepared for container-first deployment.
 
 ## Team
 
-NEMO CrudeFlow Engineering Team
-
-- Product and operations intelligence
-- Full-stack engineering
-- Optimization and AI integration
+Aarya Tanwade
 
 ---
 
