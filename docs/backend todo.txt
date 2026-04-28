@@ -1,0 +1,9 @@
+NEMO To Do List:
+
+1. Stable APIs for frontend pages
+2. Optimization engine (rerouting + logistics)
+3. Multi-agent orchestration
+4. Scenario simulator
+5. AI executive summaries
+6. Realistic mock/live data layer
+7. Logging last

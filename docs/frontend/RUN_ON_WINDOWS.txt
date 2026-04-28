@@ -1,0 +1,112 @@
+# How to Run START.bat - Step by Step
+
+## The Easiest Way (3 Steps)
+
+### Step 1: Download & Extract
+- Download the ZIP file from v0
+- Extract it to a folder on your PC
+- Example: `C:\Projects\crudeflow-frontend\`
+
+### Step 2: Double-Click START.bat
+- Find `START.bat` in the extracted folder
+- Double-click it
+- A terminal window will open
+
+### Step 3: Wait for "Dev Server Ready"
+- The script automatically:
+  - Installs Node.js dependencies
+  - Creates environment config
+  - Starts the development server
+  - Opens your browser
+- Takes 2-3 minutes first time, 10-15 seconds after that
+
+### That's It!
+- Browser opens at `http://localhost:3000`
+- You see the CrudeFlow landing page
+- Press `Ctrl + C` to stop
+
+---
+
+## What If It Doesn't Work?
+
+### "Node.js not found"
+- Download: https://nodejs.org/
+- Run the installer
+- Check ✅ "Add to PATH"
+- Restart your PC
+- Try START.bat again
+
+### Terminal window closes immediately
+- Right-click `START.bat`
+- Select "Edit"
+- Go to the end of the file
+- This shouldn't happen, but if it does, it means there's an error early on
+
+### Browser doesn't open
+- Manually go to: http://localhost:3000
+- The server is probably running fine
+
+### Port 3000 already in use
+- You have another app using port 3000
+- Close the other app, or
+- Edit `.env.local` and change `PORT=3001`
+
+---
+
+## Advanced: PowerShell Alternative
+
+If you want prettier output:
+
+1. Right-click `START.ps1`
+2. Select "Run with PowerShell"
+3. Same process, but with colors
+
+---
+
+## What to Do After It Starts
+
+### You Should See:
+- A terminal with "Dev server ready"
+- Browser opening to http://localhost:3000
+- The CrudeFlow landing page loads
+
+### Now What?
+- Open `.env.local` in a text editor
+- Update these if you have a backend:
+  ```
+  NEXT_PUBLIC_API_URL=http://localhost:8000/api
+  NEXT_PUBLIC_API_WS_URL=ws://localhost:8000/ws
+  ```
+- Save and refresh browser (F5)
+- You're ready to connect your backend!
+
+---
+
+## File Inside START.bat Does
+
+```
+1. Check Node.js installed ✓
+2. Check pnpm installed ✓
+3. Install dependencies (pnpm install) ✓
+4. Create .env.local from template ✓
+5. Start dev server (pnpm dev) ✓
+6. Browser opens automatically ✓
+```
+
+---
+
+## To Stop the Server
+
+- In the terminal: Press `Ctrl + C`
+- Terminal will ask "Terminate batch job? (Y/N)"
+- Type `Y` and press Enter
+
+---
+
+## Next Time You Want to Run
+
+Just double-click `START.bat` again. It's that simple!
+
+---
+
+**Need more help?** See `QUICK_START_WINDOWS.md` for detailed guide.

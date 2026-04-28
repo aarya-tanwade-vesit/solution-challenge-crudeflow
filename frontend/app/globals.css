@@ -1,0 +1,452 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet Map Styling - Ensure map stays below all top bar dropdowns */
+.leaflet-container {
+  background-color: #0a0a0a;
+  font-family: var(--font-sans);
+  z-index: 0 !important;
+  position: relative !important;
+  isolation: isolate; /* Create a new stacking context */
+}
+
+/* Leaflet panes - keep all panes at low z-index */
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-tile-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-overlay-pane {
+  z-index: 2 !important;
+}
+
+.leaflet-shadow-pane {
+  z-index: 3 !important;
+}
+
+.leaflet-marker-pane {
+  z-index: 4 !important;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 5 !important;
+}
+
+.leaflet-popup-pane {
+  z-index: 6 !important;
+}
+
+/* Ensure Leaflet controls don't overlap with header dropdowns */
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10 !important;
+}
+
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  background-color: rgba(38, 38, 38, 0.8) !important;
+  border: 1px solid rgba(64, 64, 64, 0.8) !important;
+  border-radius: 0.375rem !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  color: #a3a3a3 !important;
+  border: none !important;
+}
+
+.leaflet-control-zoom-in:hover,
+.leaflet-control-zoom-out:hover {
+  color: #e5e5e5 !important;
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 0.375rem;
+}
+
+.leaflet-popup-content {
+  color: #e5e5e5;
+  margin: 0;
+}
+
+.leaflet-popup-tip {
+  background-color: #1a1a1a;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  color: #a3a3a3;
+}
+
+.custom-marker {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Minimalistic Custom Scrollbar - KPI Strip */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+/* Chrome, Safari, Edge */
+*::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 200ms ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Page transitions — Apple/macOS-style fluidity, very subtle.
+   ───────────────────────────────────────────────────────── */
+.page-transition {
+  animation: page-fade-in 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)     scale(1);    }
+}
+
+.pop-in {
+  animation: pop-in 140ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .pop-in {
+    animation: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Cursor feedback — every clickable element gets a hand cursor.
+   Removes ambiguity on buttons, links, role="button", checkbox,
+   radio, summary, and elements with the explicit class .clickable.
+   ───────────────────────────────────────────────────────── */
+button:not(:disabled),
+a[href],
+[role="button"]:not([aria-disabled="true"]),
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+summary,
+.clickable,
+label[for] {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Simulation Mode Frame — CRITICAL FIX
+   
+   Blue border appears on ALL 4 EDGES (top, left, right, bottom)
+   covering the entire screen, persisting on all pages when
+   simulation mode is active. Uses fixed positioning to ensure
+   it's never clipped by overflow or scrollbars.
+   ───────────────────────────────────────────────────────── */
+@keyframes sim-frame-pulse {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 0.95; }
+}
+
+.sim-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border: 1.5px solid rgba(59, 130, 246, 0.55);
+  box-shadow:
+    inset 0 0 0 1px rgba(59, 130, 246, 0.15),
+    inset 0 0 36px rgba(59, 130, 246, 0.08);
+  animation: sim-frame-pulse 4.5s ease-in-out infinite;
+}
+
+.sim-frame::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Internal sim-glow ring used inside cards (kept for compatibility) */
+.sim-glow {
+  box-shadow: inset 0 0 0 1.5px rgba(59, 130, 246, 0.3);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Smooth dropdown / popover entrance.
+   ───────────────────────────────────────────────────────── */
+[data-state="open"][data-side] {
+  animation: pop-in 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─────────────────────────────────────────────────────────
+   KPI card — refined typographic rhythm tokens.
+   ───────────────────────────────────────────────────────── */
+.kpi-value {
+  font-feature-settings: "tnum" 1, "ss01" 1;
+  letter-spacing: -0.02em;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Tab override — guarantees readable contrast on dark
+   backgrounds for unselected tabs (radix puts text-foreground
+   which can render too dark in dark mode).
+   ───────────────────────────────────────────────────────── */
+.tabs-dark [data-slot="tabs-list"] {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+}
+.tabs-dark [data-slot="tabs-trigger"] {
+  color: #a3a3a3;
+}
+.tabs-dark [data-slot="tabs-trigger"]:hover {
+  color: #e5e5e5;
+}
+.tabs-dark [data-slot="tabs-trigger"][data-state="active"] {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.tabs-dark [data-slot="tabs-trigger"][data-state="active"] svg {
+  color: #ffffff;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Landing live map (leaflet) — tooltip + ship animation.
+   ───────────────────────────────────────────────────────── */
+
+/* Reset leaflet's default white tooltip to the NEMO theme. */
+.leaflet-tooltip.nemo-leaflet-tip {
+  background: rgba(10, 10, 10, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #d4d4d4;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+}
+.leaflet-tooltip.nemo-leaflet-tip::before { display: none; }
+.leaflet-tooltip.nemo-leaflet-tip-primary {
+  border-color: rgba(34, 211, 238, 0.45);
+  color: #e5e5e5;
+}
+.leaflet-tooltip.nemo-leaflet-tip-danger {
+  border-color: rgba(239, 68, 68, 0.45);
+  color: #fecaca;
+}
+
+/* Concentric pulse for the moving tanker. */
+@keyframes nemo-ship-ping {
+  0%   { transform: scale(0.6); opacity: 0.85; }
+  100% { transform: scale(2.2); opacity: 0;    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nemo-ship-icon span:first-child { animation: none !important; }
+}
+/* ─────────────────────────────────────────────────────────
+   Historic Match Popup — SaaS / Enterprise Look
+   ───────────────────────────────────────────────────────── */
+.historic-match-popup .leaflet-popup-content-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.historic-match-popup .leaflet-popup-content {
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.historic-match-popup .leaflet-popup-tip {
+  background: #0a0a0a !important;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.historic-match-popup .leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+  color: #525252 !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+.historic-match-popup .leaflet-popup-close-button:hover {
+  color: #fff !important;
+  background: transparent !important;
+}

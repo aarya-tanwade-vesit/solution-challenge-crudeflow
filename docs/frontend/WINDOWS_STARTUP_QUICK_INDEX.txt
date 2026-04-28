@@ -1,0 +1,239 @@
+## 🎯 Windows Startup - Complete Setup
+
+You now have everything to run the project on Windows with a single click.
+
+---
+
+## 📦 What You Got
+
+### Startup Scripts (Use These)
+
+| File | What It Does |
+|------|-------------|
+| **START.bat** | ⭐ MAIN SCRIPT - Double-click to run everything |
+| **START.ps1** | Alternative PowerShell version (Windows 10/11) |
+
+### Documentation (Read These)
+
+| File | Who Should Read It |
+|------|-------------------|
+| **RUN_ON_WINDOWS.txt** | First-time users (3-step guide) |
+| **WINDOWS_SCRIPTS_README.md** | Everyone (complete reference) |
+| **QUICK_START_WINDOWS.md** | If something doesn't work |
+| **WINDOWS_STARTUP_SUMMARY.txt** | Overview (this file) |
+
+---
+
+## 🚀 30-Second Start
+
+### Step 1: Download
+- Extract the ZIP file to your PC
+- Example: `C:\Projects\crudeflow-frontend\`
+
+### Step 2: Double-Click
+- Find `START.bat` in the folder
+- Double-click it
+- A terminal window opens
+
+### Step 3: Wait
+- Automated setup runs (~2-3 minutes first time)
+- Browser opens at `http://localhost:3000`
+- You see the CrudeFlow app
+- Done!
+
+---
+
+## ✅ What START.bat Does Automatically
+
+```
+✓ Checks Node.js installed
+✓ Installs pnpm if missing
+✓ Runs pnpm install
+✓ Creates .env.local
+✓ Starts dev server
+✓ Opens browser
+✓ Shows success message
+```
+
+**No additional setup needed.**
+
+---
+
+## 📋 First-Time Setup Checklist
+
+- [ ] Download and extract ZIP file
+- [ ] Double-click `START.bat`
+- [ ] Wait for browser to open
+- [ ] Verify you see the landing page
+- [ ] Edit `.env.local` if you have a backend
+
+---
+
+## 🔌 Connect Your Backend
+
+After the first run:
+
+1. Open `.env.local` in a text editor
+2. Update these URLs:
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:8000/api
+   NEXT_PUBLIC_API_WS_URL=ws://localhost:8000/ws
+   ```
+3. Save and refresh browser (F5)
+4. Start your backend service
+5. The app will now connect to your backend
+
+See `BACKEND_INTEGRATION.md` for API specs.
+
+---
+
+## 🆘 Troubleshooting Quick Links
+
+### "Node.js not found"
+→ Read: `QUICK_START_WINDOWS.md` → Troubleshooting section
+
+### "Terminal closes immediately"
+→ Read: `QUICK_START_WINDOWS.md` → Common Errors
+
+### "Port 3000 already in use"
+→ Edit `.env.local` and change `PORT=3001`
+
+### "I get an error I don't understand"
+→ Read: `WINDOWS_SCRIPTS_README.md` → Troubleshooting table
+
+---
+
+## 📚 Documentation Map
+
+```
+START HERE
+    ↓
+RUN_ON_WINDOWS.txt (3-step guide)
+    ↓
+Something doesn't work?
+    ↓
+QUICK_START_WINDOWS.md (troubleshooting)
+    ↓
+Want to understand everything?
+    ↓
+WINDOWS_SCRIPTS_README.md (complete reference)
+    ↓
+Need backend info?
+    ↓
+BACKEND_INTEGRATION.md (API specs)
+```
+
+---
+
+## 🎬 Key Features
+
+- **One-click startup** — Double-click to run
+- **Fully automated** — No manual configuration
+- **Error-friendly** — Clear messages if something fails
+- **Fast development** — Hot module reloading (HMR)
+- **Auto-browser** — Opens browser automatically
+- **Easy stopping** — Press Ctrl+C to stop
+
+---
+
+## 💻 System Requirements
+
+- **Windows:** XP SP3 and up (7, 8, 10, 11, etc.)
+- **Node.js:** 18+ (auto-checked by script)
+- **RAM:** 2GB minimum (4GB recommended)
+- **Disk:** 500MB free (for npm packages)
+- **Internet:** Required (downloads packages first time)
+
+---
+
+## ⏱️ Timing
+
+| Scenario | Time |
+|----------|------|
+| First run (download + setup) | 2-3 minutes |
+| Subsequent runs | 10-15 seconds |
+| Stop and restart | 15 seconds |
+
+---
+
+## 🎯 After Setup Works
+
+### You Can Now:
+
+1. **Edit files** in `app/` and `components/`
+2. **See changes instantly** (hot reload)
+3. **Check console** for errors (F12)
+4. **Test in browser** (http://localhost:3000)
+5. **Connect backend** (see BACKEND_INTEGRATION.md)
+6. **Deploy to production** (see README.md)
+
+---
+
+## 🆘 If START.bat Doesn't Work
+
+### Try PowerShell Version Instead:
+
+1. Right-click `START.ps1`
+2. Select "Run with PowerShell"
+3. If it asks about execution policy:
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
+### If Neither Works:
+
+1. Open terminal in project folder
+2. Type:
+   ```bash
+   pnpm install
+   pnpm dev
+   ```
+3. Open http://localhost:3000
+
+---
+
+## 📖 File Structure After First Run
+
+```
+crudeflow-frontend/
+├── node_modules/          (npm packages - auto-created)
+├── .env.local             (config - auto-created)
+├── .next/                 (build cache - auto-created)
+├── START.bat              (use this)
+├── START.ps1              (alternative)
+├── package.json
+├── tsconfig.json
+├── app/                   (pages)
+├── components/            (React components)
+├── contexts/              (state management)
+└── ... (other files)
+```
+
+---
+
+## 🎁 You Also Have
+
+- Full React component library (shadcn/ui - 125+ components)
+- Real Leaflet maps integration
+- Framer Motion animations
+- Dark theme (NEMO aesthetic)
+- TypeScript type safety
+- Hot module reloading (HMR)
+- Production-ready code
+
+---
+
+## 🚀 Ready to Go!
+
+1. **Download the ZIP**
+2. **Double-click START.bat**
+3. **Wait for browser to open**
+4. **Start developing!**
+
+Questions? Read `WINDOWS_SCRIPTS_README.md`
+
+---
+
+**Version:** 1.0  
+**Date:** April 2026  
+**Status:** ✅ Production Ready
